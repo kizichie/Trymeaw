@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Letters — A Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- Character gallery: 10 editable side positions. Replace the filenames with your own images. -->
+<aside class="character-gallery" aria-label="Character image gallery">
+  <figure class="character-slot character-slot-01"><img src="character-01.png" alt="Character image 01"><figcaption>CHARACTER 01</figcaption></figure>
+  <figure class="character-slot character-slot-02"><img src="character-02.png" alt="Character image 02"><figcaption>CHARACTER 02</figcaption></figure>
+  <figure class="character-slot character-slot-03"><img src="character-03.png" alt="Character image 03"><figcaption>CHARACTER 03</figcaption></figure>
+  <figure class="character-slot character-slot-04"><img src="character-04.png" alt="Character image 04"><figcaption>CHARACTER 04</figcaption></figure>
+  <figure class="character-slot character-slot-05"><img src="character-05.png" alt="Character image 05"><figcaption>CHARACTER 05</figcaption></figure>
+  <figure class="character-slot character-slot-06"><img src="character-06.png" alt="Character image 06"><figcaption>CHARACTER 06</figcaption></figure>
+  <figure class="character-slot character-slot-07"><img src="character-07.png" alt="Character image 07"><figcaption>CHARACTER 07</figcaption></figure>
+  <figure class="character-slot character-slot-08"><img src="character-08.png" alt="Character image 08"><figcaption>CHARACTER 08</figcaption></figure>
+  <figure class="character-slot character-slot-09"><img src="character-09.png" alt="Character image 09"><figcaption>CHARACTER 09</figcaption></figure>
+  <figure class="character-slot character-slot-10"><img src="character-10.png" alt="Character image 10"><figcaption>CHARACTER 10</figcaption></figure>
+</aside>
+
+<main>
+  <header>
+    <p class="eyebrow">A COLLECTION OF UNSENT THOUGHTS</p>
+    <h1>the letters</h1>
+    <p class="subtitle">for the people who left a sentence in my story.</p>
+    <div class="rule"></div>
+
+    <div class="archive-tools">
+      <label class="search-wrap" for="searchInput">
+        <span>SEARCH THE ARCHIVE</span>
+        <input id="searchInput" type="search" placeholder="name, song, or keyword..." autocomplete="off">
+      </label>
+      <p class="archive-count" id="archiveCount"></p>
+    </div>
+  </header>
+
+  <section class="grid" id="lettersGrid"></section>
+  <p class="empty-state" id="emptyState" hidden>No letters found in the archive.</p>
+
+  <footer>
+    <div class="rule"></div>
+    <p>all words, memories, and unfinished sentences kept here.</p>
+  </footer>
+</main>
+
+<!-- Letter modal -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="backdrop" id="backdrop"></div>
+
+  <article class="paper" id="paper">
+    <button class="close" id="close" aria-label="Close letter">×</button>
+    <div class="paperHead"><span id="number"></span><span id="date"></span></div>
+    <h2 id="person"></h2>
+    <div class="special-mark" id="specialMark" aria-hidden="true"></div>
+    <div class="paperRule"></div>
+    <div class="letter" id="letter"></div>
+
+    <section class="voice-note" id="voiceNote" hidden style="display:none">
+      <p>VOICE RECORDING</p>
+      <div class="voice-player">
+        <span class="voice-icon" aria-hidden="true">◉</span>
+        <div class="voice-copy">
+          <b id="voiceTitle">A voice, kept here.</b>
+          <small id="voiceDescription">A recording attached to this special letter.</small>
+        </div>
+        <audio id="voiceAudio" controls preload="metadata"></audio>
+      </div>
+    </section>
+
+    <section class="soundtrack">
+      <p>SOUNDTRACK</p>
+      <div class="song">
+        <div>
+          <b id="song"></b>
+          <span id="artist"></span>
+        </div>
+      </div>
+      <div class="spotify-frame" id="spotifyFrame"></div>
+      <small id="spotifyNote">Replace the placeholder Spotify track ID in <code>script.js</code>.</small>
+    </section>
+  </article>
+</div>
+
+<div class="rain" id="rain"></div>
+<script src="script.js"></script>
+</body>
+</html>
